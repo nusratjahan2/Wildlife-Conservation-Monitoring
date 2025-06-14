@@ -75,8 +75,11 @@ WHERE location LIKE '%Pass';
 
 
 -- problem 4
-SELECT COUNT(*) FROM sightings
-WHERE 
+SELECT ranger_name, COUNT(*) 
+FROM rangers
+JOIN sightings USING (ranger_id)
+GROUP BY ranger_name;
+
 
 -- problem 5
 -- problem 6
