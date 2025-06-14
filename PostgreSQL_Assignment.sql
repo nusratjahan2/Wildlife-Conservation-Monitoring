@@ -82,4 +82,12 @@ GROUP BY ranger_name;
 
 
 -- problem 5
+
 -- problem 6
+SELECT common_name, sighting_time, ranger_name
+FROM sightings
+JOIN rangers USING (ranger_id)
+JOIN species USING (species_id)
+GROUP BY common_name, sighting_time, ranger_name
+ORDER BY sighting_time DESC
+LIMIT 2;
